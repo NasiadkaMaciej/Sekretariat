@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sekretariat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1000">
     <Grid>
+        <TabControl>
+            <TabItem Header="Uczeń">
+                <Grid Background="#FFE5E5E5">
+                    <!--
+                    Nowe Labele zaczynają się na końcu TextBoxa
+                    Szerokość kolumny to 130+szerokość Labelax, textBoxy są oddalone od początku Labela o jego szerokość
+                    -->
+                    <Label Content="Imię:" Margin="10,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Uid="uczenImie" HorizontalAlignment="Left" Margin="90,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Drugie imię:" Margin="10,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Uid="uczenDrugieImie" HorizontalAlignment="Left" Margin="90,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Nazwisko:" Margin="10,70,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Uid="uczenNazwisko" HorizontalAlignment="Left" Margin="90,74,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                    <Label Content="Nazwisko panieńskie:" Margin="210,10,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Uid="uczenNazwiskoPanienskie" Margin="340,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+                    <Label Content="Imię ojca:" x:Uid="uczenOjciec" Margin="210,40,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Uid="uczenOjciec" Margin="340,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="120"/>
+                    <Label Content="Imię matki:" Margin="210,70,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Uid="uczenMatka" Margin="340,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+
+                    <Label Content="Data urodzenia:" Margin="460,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <DatePicker x:Uid="uczenDataUr" HorizontalAlignment="Left" Margin="560,10,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Pesel:" x:Uid="uczenOjciec" Margin="460,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Uid="uczenPesel" HorizontalAlignment="Left" Margin="560,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Zdjęcie:" Margin="460,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Button Content="__________" HorizontalAlignment="Left" Margin="560,74,0,0" VerticalAlignment="Top" Height="20" Width="120" Click="uczenZaladujZdjecie"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Nauczyciel">
+                <Grid Background="#FFE5E5E5">
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Pracownik">
+                <Grid Background="#FFE5E5E5">
+                </Grid>
+
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

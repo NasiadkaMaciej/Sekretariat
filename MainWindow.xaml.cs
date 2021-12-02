@@ -24,5 +24,10 @@ namespace Sekretariat
         {
             InitializeComponent();
         }
+
+        private void uczenZaladujZdjecie(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
