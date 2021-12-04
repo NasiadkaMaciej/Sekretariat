@@ -5,48 +5,147 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sekretariat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
-    <Grid>
-        <TabControl>
-            <TabItem Header="Uczeń">
-                <Grid Background="#FFE5E5E5">
-                    <!--
+        Title="MainWindow" Height="600" Width="1100">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Plik">
+                <MenuItem Header="_Wyjdź" />
+            </MenuItem>
+            <MenuItem Header="_Wpis">
+                <MenuItem Header="_Dodaj"/>
+                <MenuItem Header="_Usuń"/>
+                <MenuItem Header="_Modyfikuj"/>
+            </MenuItem>
+            <MenuItem Header="_Ustawienia">
+                <MenuItem Header="_Manage users"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <TabControl>
+                <TabItem Header="Uczeń">
+                    <Grid Background="#FFE5E5E5">
+                        <!--
                     Nowe Labele zaczynają się na końcu TextBoxa
                     Szerokość kolumny to 130+szerokość Labelax, textBoxy są oddalone od początku Labela o jego szerokość
                     -->
-                    <Label Content="Imię:" Margin="10,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Uid="uczenImie" HorizontalAlignment="Left" Margin="90,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Drugie imię:" Margin="10,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Uid="uczenDrugieImie" HorizontalAlignment="Left" Margin="90,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Nazwisko:" Margin="10,70,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Uid="uczenNazwisko" HorizontalAlignment="Left" Margin="90,74,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
-                    <Label Content="Nazwisko panieńskie:" Margin="210,10,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Uid="uczenNazwiskoPanienskie" Margin="340,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-                    <Label Content="Imię ojca:" x:Uid="uczenOjciec" Margin="210,40,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Uid="uczenOjciec" Margin="340,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="120"/>
-                    <Label Content="Imię matki:" Margin="210,70,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Uid="uczenMatka" Margin="340,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+                        <Label Content="Imię:" Margin="0,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenImie" HorizontalAlignment="Left" Margin="80,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Drugie imię:" Margin="0,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenDrugieImie" HorizontalAlignment="Left" Margin="80,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Nazwisko:" Margin="0,70,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenNazwisko" HorizontalAlignment="Left" Margin="80,74,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
 
-                    <Label Content="Data urodzenia:" Margin="460,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <DatePicker x:Uid="uczenDataUr" HorizontalAlignment="Left" Margin="560,10,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Pesel:" x:Uid="uczenOjciec" Margin="460,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Uid="uczenPesel" HorizontalAlignment="Left" Margin="560,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Zdjęcie:" Margin="460,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <Button Content="__________" HorizontalAlignment="Left" Margin="560,74,0,0" VerticalAlignment="Top" Height="20" Width="120" Click="uczenZaladujZdjecie"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Nauczyciel">
-                <Grid Background="#FFE5E5E5">
+                        <Label Content="Nazwisko panieńskie:" Margin="190,10,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenNazwiskoPanienskie" Margin="320,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Imię ojca:" Margin="190,40,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenOjciec" Margin="320,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Imię matki:" Margin="190,70,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenMatka" Margin="320,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
 
-                </Grid>
-            </TabItem>
-            <TabItem Header="Pracownik">
-                <Grid Background="#FFE5E5E5">
-                </Grid>
+                        <Label Content="Data urodzenia:" Margin="430,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <DatePicker x:Uid="uczenDataUr" HorizontalAlignment="Left" Margin="530,10,0,0" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <Button Content="__________" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="uczenZaladujZdjecie"/>
 
-            </TabItem>
-        </TabControl>
+                        <Label Content="Płeć:" Margin="640,10,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <ComboBox x:Uid="uczenPlec" HorizontalAlignment="Left" Margin="690,14,0,0" VerticalAlignment="Top" Width="110">
+                            <ComboBoxItem>Mężczyzna</ComboBoxItem>
+                            <ComboBoxItem>Kobieta</ComboBoxItem>
+                        </ComboBox>
+                        <Label Content="Klasa:" Margin="640,40,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenKlasa" Margin="690,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Grupy:" Margin="640,70,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="uczenGrupy" Margin="690,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
 
-    </Grid>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Nauczyciel">
+                    <Grid Background="#FFE5E5E5">
+                        <Label Content="Imię:" Margin="0,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielImie" HorizontalAlignment="Left" Margin="80,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Drugie imię:" Margin="0,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielDrugieImie" HorizontalAlignment="Left" Margin="80,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Nazwisko:" Margin="0,70,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielNazwisko" HorizontalAlignment="Left" Margin="80,74,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+
+                        <Label Content="Nazwisko panieńskie:" Margin="190,10,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielNazwiskoPanienskie" Margin="320,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Imię ojca:" Margin="190,40,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielOjciec" Margin="320,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Imię matki:" Margin="190,70,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielMatka" Margin="320,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+
+                        <Label Content="Data urodzenia:" Margin="430,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <DatePicker x:Uid="nauczycielDataUr" HorizontalAlignment="Left" Margin="530,10,0,0" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <Button Content="__________" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="nauczycielZaladujZdjecie"/>
+
+                        <Label Content="Płeć:" Margin="640,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <ComboBox x:Uid="nauczycielPlec" HorizontalAlignment="Left" Margin="740,14,0,0" VerticalAlignment="Top" Width="110">
+                            <ComboBoxItem>Mężczyzna</ComboBoxItem>
+                            <ComboBoxItem>Kobieta</ComboBoxItem>
+                        </ComboBox>
+                        <Label Content="Wychowawstwo:" Margin="640,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielWychowawstwo" Margin="740,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Przedmioty:" Margin="640,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielPrzedmioty" Margin="740,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+
+                        <Label Content="Klasy i godziny:" Margin="850,10,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="nauczycielKlasy" Margin="960,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+                        <Label Content="Data zatrudnienia:" Margin="850,40,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <DatePicker x:Uid="nauczycielDataZatr" HorizontalAlignment="Left" Margin="960,40,0,0" VerticalAlignment="Top" Width="120"/>
+
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Pracownik">
+                    <Grid Background="#FFE5E5E5">
+                        <Label Content="Imię:" Margin="0,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikImie" HorizontalAlignment="Left" Margin="80,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Drugie imię:" Margin="0,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikDrugieImie" HorizontalAlignment="Left" Margin="80,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Nazwisko:" Margin="0,70,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikNazwisko" HorizontalAlignment="Left" Margin="80,74,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+
+                        <Label Content="Nazwisko panieńskie:" Margin="190,10,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikNazwiskoPanienskie" Margin="320,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Imię ojca:" Margin="190,40,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikOjciec" Margin="320,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Imię matki:" Margin="190,70,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikMatka" Margin="320,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+
+                        <Label Content="Data urodzenia:" Margin="430,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <DatePicker x:Uid="pracownikDataUr" HorizontalAlignment="Left" Margin="530,10,0,0" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+                        <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <Button Content="__________" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="pracownikZaladujZdjecie"/>
+
+                        <Label Content="Płeć:" Margin="640,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <ComboBox x:Uid="pracownikPlec" HorizontalAlignment="Left" Margin="740,14,0,0" VerticalAlignment="Top" Width="110">
+                            <ComboBoxItem>Mężczyzna</ComboBoxItem>
+                            <ComboBoxItem>Kobieta</ComboBoxItem>
+                        </ComboBox>
+                        <Label Content="Etat:" Margin="640,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikEtat" Margin="740,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="Stanowisko:" Margin="640,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Uid="pracownikPrzedmioty" Margin="740,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+
+                        <Label Content="Data zatrudnienia:" Margin="850,10,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                        <DatePicker x:Uid="pracownikDataZatr" HorizontalAlignment="Left" Margin="960,10,0,0" VerticalAlignment="Top" Width="120"/>
+
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </DockPanel>
 </Window>

@@ -29,5 +29,15 @@ namespace Sekretariat
         {
 
         }
+
+        private void nauczycielZaladujZdjecie(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void pracownikZaladujZdjecie(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
