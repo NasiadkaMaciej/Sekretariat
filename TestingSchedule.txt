@@ -10,3 +10,7 @@ Zapisywanie i odczytywanie obiektów w pełni działające
 Przycisk dodaj dodaje do listy obiekt z danymi z formularza
 Do zrobienia:
 Sprawdzenie wartości, które mogą powodować odwołania do null
+05.12.2021 13:55
+Zapisywanie i odczytywanie plików z i do dowolnego pliku działające dla każdej grupy 
+05.12.2021 14:24
+Działające usuwanie wpisów

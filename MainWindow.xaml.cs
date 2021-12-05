@@ -2,18 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Sekretariat
 {
@@ -30,18 +20,18 @@ namespace Sekretariat
         {
             InitializeComponent();
 
-            uczniowie.Add( new Uczen() { Imie = "Zawisza", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel="12345678901", Zdjecie="C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec="Mężczyzna", Klasa="3Pr", Grupy="Ang gr2"});
-            uczniowie.Add( new Uczen() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel="12345678901", Zdjecie="C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec="Mężczyzna", Klasa="3Pr", Grupy="Ang gr2"});
-            nauczyciele.Add( new Nauczyciel() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel="12345678901", Zdjecie="C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec="Mężczyzna", Wychowawstwo="3Pr", Przedmioty="Angielski", Klasy="3Pr", DataZatrudnienia = DateTime.Today});
-            nauczyciele.Add( new Nauczyciel() { Imie = "Krystian", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel="12345678901", Zdjecie="C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec="Mężczyzna", Wychowawstwo="3Pr", Przedmioty="Angielski", Klasy="3Pr", DataZatrudnienia = DateTime.Today});
+            //uczniowie.Add(new Uczen() { Imie = "Zawisza", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Klasa = "3Pr", Grupy = "Ang gr2" });
+            //uczniowie.Add(new Uczen() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Klasa = "3Pr", Grupy = "Ang gr2" });
+            nauczyciele.Add(new Nauczyciel() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Wychowawstwo = "3Pr", Przedmioty = "Angielski", Klasy = "3Pr", DataZatrudnienia = DateTime.Today });
+            nauczyciele.Add(new Nauczyciel() { Imie = "Krystian", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Wychowawstwo = "3Pr", Przedmioty = "Angielski", Klasy = "3Pr", DataZatrudnienia = DateTime.Today });
             pracownicy.Add(new Pracownik() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Etat = "Pełny", Stanowisko = "Kucharz", DataZatrudnienia = DateTime.Today });
             pracownicy.Add(new Pracownik() { Imie = "Mariusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Etat = "Pełny", Stanowisko = "Kucharz", DataZatrudnienia = DateTime.Today });
-            
+
             //Uczen hej = new Uczen() { Imie = "Zawisza", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Klasa = "3Pr", Grupy = "Ang gr2" };
             //BinarySerialization.WriteToBinaryFile("C:\\Users\\Gall Anonim\\Desktop\\test.txt", hej, false);
-            BinarySerialization.WriteToBinaryFile<List<Uczen>>("uczniowie.txt", uczniowie);
-            BinarySerialization.WriteToBinaryFile<List<Nauczyciel>>("nauczyciele.txt", nauczyciele);
-            BinarySerialization.WriteToBinaryFile<List<Pracownik>>("pracownicy.txt", pracownicy);
+            // BinarySerialization.WriteToBinaryFile<List<Uczen>>("uczniowie.txt", uczniowie);
+            //BinarySerialization.WriteToBinaryFile<List<Nauczyciel>>("nauczyciele.txt", nauczyciele);
+            //BinarySerialization.WriteToBinaryFile<List<Pracownik>>("pracownicy.txt", pracownicy);
 
             uczniowie = BinarySerialization.ReadFromBinaryFile<List<Uczen>>("uczniowie.txt");
             nauczyciele = BinarySerialization.ReadFromBinaryFile<List<Nauczyciel>>("nauczyciele.txt");
@@ -50,6 +40,9 @@ namespace Sekretariat
             dgNauczyciel.ItemsSource = nauczyciele;
             dgPracownik.ItemsSource = pracownicy;
 
+            dgUczen.IsReadOnly = true;
+            dgNauczyciel.IsReadOnly = true;
+            dgPracownik.IsReadOnly = true;
 
         }
 
@@ -106,26 +99,67 @@ namespace Sekretariat
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
-               pracownikDodajZdjecie.Content = openFileDialog.FileName.ToString();
+                pracownikDodajZdjecie.Content = openFileDialog.FileName.ToString();
         }
         private void uczenDodaj(object sender, RoutedEventArgs e)
         {
-            uczniowie.Add(new Uczen() {
-                Imie = uczenImie.Text,
-                DrugieImie = uczenDrugieImie.Text,
-                Nazwisko = uczenNazwisko.Text,
-                NazwiskoPanienskie = uczenNazwiskoPanienskie.Text,
-                ImieOjca = uczenOjciec.Text,
-                ImieMatki = uczenMatka.Text,
-                DataUrodzenia = uczenDataUr.SelectedDate.Value,
-                Pesel = uczenPesel.Text,
-                Zdjecie = uczenDodajZdjecie.Content.ToString(),
-                Plec = uczenPlec.SelectedItem.ToString(),
-                Klasa = uczenKlasa.Text,
-                Grupy = uczenGrupy.Text });;
+            ComboBoxItem cbiUczenPlec = (ComboBoxItem)uczenPlec.SelectedItem;
+            //Dodaj sprawdzanie innych pól
+            if (uczenDodajZdjecie.Content == null || cbiUczenPlec == null || uczenDataUr.SelectedDate == null)
+            {
+                MessageBox.Show("Uzupełnij wszystkie wymagane pola, world!");
+            }
+            else
+            {
+                uczniowie.Add(new Uczen()
+                {
+                    Imie = uczenImie.Text,
+                    DrugieImie = uczenDrugieImie.Text,
+                    Nazwisko = uczenNazwisko.Text,
+                    NazwiskoPanienskie = uczenNazwiskoPanienskie.Text,
+                    ImieOjca = uczenOjciec.Text,
+                    ImieMatki = uczenMatka.Text,
+                    DataUrodzenia = uczenDataUr.SelectedDate.Value,
+                    Pesel = uczenPesel.Text,
+                    Zdjecie = uczenDodajZdjecie.Content.ToString(),
+                    Plec = cbiUczenPlec.Content.ToString(),
+                    Klasa = uczenKlasa.Text,
+                    Grupy = uczenGrupy.Text
+                });
+                dgUczen.ItemsSource = null;
+                dgUczen.ItemsSource = uczniowie;
+            }
         }
         private void nauczycielDodaj(object sender, RoutedEventArgs e)
         {
+            ComboBoxItem cbiNauczycielPlec = (ComboBoxItem)nauczycielPlec.SelectedItem;
+            //Dodaj sprawdzanie innych pól
+            if (nauczycielDodajZdjecie.Content == null || cbiNauczycielPlec == null || nauczycielDataUr.SelectedDate == null || nauczycielDataZatr.SelectedDate == null)
+            {
+                MessageBox.Show("Uzupełnij wszystkie wymagane pola, world!");
+            }
+            else
+            {
+                nauczyciele.Add(new Nauczyciel()
+                {
+                    Imie = nauczycielImie.Text,
+                    DrugieImie = nauczycielDrugieImie.Text,
+                    Nazwisko = nauczycielNazwisko.Text,
+                    NazwiskoPanienskie = nauczycielNazwiskoPanienskie.Text,
+                    ImieOjca = nauczycielOjciec.Text,
+                    ImieMatki = nauczycielMatka.Text,
+                    DataUrodzenia = nauczycielDataUr.SelectedDate.Value,
+                    Pesel = nauczycielPesel.Text,
+                    Zdjecie = nauczycielDodajZdjecie.Content.ToString(),
+                    Plec = cbiNauczycielPlec.Content.ToString(),
+                    Wychowawstwo = nauczycielWychowawstwo.Text,
+                    Przedmioty = nauczycielPrzedmioty.Text,
+                    Klasy = nauczycielKlasy.Text,
+                    DataZatrudnienia = nauczycielDataZatr.SelectedDate.Value
+                });
+                dgNauczyciel.ItemsSource = null;
+                dgNauczyciel.ItemsSource = nauczyciele;
+            }
         }
         private void pracownikDodaj(object sender, RoutedEventArgs e)
         {
@@ -167,5 +201,74 @@ namespace Sekretariat
             }
         }
 
+        private void Zapisz(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                switch (rodzajCzlowieka.SelectedIndex)
+                {
+                    case 0:
+                        BinarySerialization.WriteToBinaryFile<List<Uczen>>(saveFileDialog.FileName, uczniowie);
+                        break;
+                    case 1:
+                        BinarySerialization.WriteToBinaryFile<List<Nauczyciel>>(saveFileDialog.FileName, nauczyciele);
+                        break;
+                    case 2:
+                        BinarySerialization.WriteToBinaryFile<List<Pracownik>>(saveFileDialog.FileName, pracownicy);
+                        break;
+                }
+            }
+        }
+
+        private void Otworz(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                switch (rodzajCzlowieka.SelectedIndex)
+                {
+                    case 0:
+                        uczniowie = BinarySerialization.ReadFromBinaryFile<List<Uczen>>(openFileDialog.FileName.ToString());
+                        dgUczen.ItemsSource = null;
+                        dgUczen.ItemsSource = uczniowie;
+                        break;
+                    case 1:
+                        nauczyciele = BinarySerialization.ReadFromBinaryFile<List<Nauczyciel>>(openFileDialog.FileName.ToString());
+                        dgNauczyciel.ItemsSource = null;
+                        dgNauczyciel.ItemsSource = nauczyciele;
+                        break;
+                    case 2:
+                        pracownicy = BinarySerialization.ReadFromBinaryFile<List<Pracownik>>(openFileDialog.FileName.ToString());
+                        dgPracownik.ItemsSource = null;
+                        dgPracownik.ItemsSource = pracownicy;
+                        break;
+                }
+            }
+        }
+        private void UsunWpis(object sender, RoutedEventArgs e)
+        {
+            switch (rodzajCzlowieka.SelectedIndex)
+            {
+                case 0:
+                    int selectedIndex = dgUczen.SelectedIndex;
+                    uczniowie.Remove(uczniowie[selectedIndex]);
+                    dgUczen.ItemsSource = null;
+                    dgUczen.ItemsSource = uczniowie;
+                    break;
+                case 1:
+                    selectedIndex = dgNauczyciel.SelectedIndex;
+                    nauczyciele.Remove(nauczyciele[selectedIndex]);
+                    dgNauczyciel.ItemsSource = null;
+                    dgNauczyciel.ItemsSource = uczniowie;
+                    break;
+                case 2:
+                    selectedIndex = dgPracownik.SelectedIndex;
+                    pracownicy.Remove(pracownicy[selectedIndex]);
+                    dgPracownik.ItemsSource = null;
+                    dgPracownik.ItemsSource = uczniowie;
+                    break;
+            }
+        }
     }
 }
