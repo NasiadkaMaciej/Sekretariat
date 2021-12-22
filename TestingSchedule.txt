@@ -14,3 +14,5 @@ Sprawdzenie wartości, które mogą powodować odwołania do null
 Zapisywanie i odczytywanie plików z i do dowolnego pliku działające dla każdej grupy 
 05.12.2021 14:24
 Działające usuwanie wpisów
+22.12.2021 23:17
+Po długich próbwach udało się wprowadzić "szkielet" modyfikacji danych z osobnego okienka

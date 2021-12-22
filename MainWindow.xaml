@@ -15,7 +15,7 @@
             </MenuItem>
             <MenuItem Header="_Wpis">
                 <MenuItem Header="_Usuń" Click="UsunWpis"/>
-                <MenuItem Header="_Modyfikuj"/>
+                <MenuItem Header="_Modyfikuj" Click="ModyfikujWpis"/>
             </MenuItem>
             <MenuItem Header="_Ustawienia">
                 <MenuItem Header="_Manage users"/>
@@ -60,6 +60,7 @@
                         <TextBox Name="uczenKlasa" Margin="690,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
                         <Label Content="Grupy:" Margin="640,70,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <TextBox Name="uczenGrupy" Margin="690,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <Button Content="Szukaj" Click="szukaj" HorizontalAlignment="Left" Margin="830,70,0,0" VerticalAlignment="Top" Width="120"/>
                         <Button Content="Dodaj" Click="uczenDodaj" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
 
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
@@ -174,7 +175,7 @@
                         <Label Content="Etat:" Margin="640,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <TextBox Name="pracownikEtat" Margin="740,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
                         <Label Content="Stanowisko:" Margin="640,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                        <TextBox Name="pracownikPrzedmioty" Margin="740,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+                        <TextBox Name="pracownikStanowisko" Margin="740,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
 
                         <Label Content="Data zatrudnienia:" Margin="850,10,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <DatePicker Name="pracownikDataZatr" HorizontalAlignment="Left" Margin="960,10,0,0" VerticalAlignment="Top" Width="120"/>

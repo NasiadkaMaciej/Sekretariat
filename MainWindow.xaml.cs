@@ -1,9 +1,12 @@
-﻿using Microsoft.Win32;
+﻿using Microsoft.VisualBasic;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace Sekretariat
 {
@@ -61,13 +64,13 @@ namespace Sekretariat
             public string Plec { get; set; }
         }
         [Serializable]
-        class Uczen : Czlowiek
+        public class Uczen : Czlowiek
         {
             public string Klasa { get; set; }
             public string Grupy { get; set; }
         }
         [Serializable]
-        class Nauczyciel : Czlowiek
+        public class Nauczyciel : Czlowiek
         {
             public string Wychowawstwo { get; set; }
             public string Przedmioty { get; set; }
@@ -86,20 +89,17 @@ namespace Sekretariat
         private void uczenZaladujZdjecie(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                uczenDodajZdjecie.Content = openFileDialog.FileName.ToString();
+            if (openFileDialog.ShowDialog() == true) uczenDodajZdjecie.Content = openFileDialog.FileName.ToString();
         }
         private void nauczycielZaladujZdjecie(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                nauczycielDodajZdjecie.Content = openFileDialog.FileName.ToString();
+            if (openFileDialog.ShowDialog() == true) nauczycielDodajZdjecie.Content = openFileDialog.FileName.ToString();
         }
         private void pracownikZaladujZdjecie(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                pracownikDodajZdjecie.Content = openFileDialog.FileName.ToString();
+            if (openFileDialog.ShowDialog() == true) pracownikDodajZdjecie.Content = openFileDialog.FileName.ToString();
         }
         private void uczenDodaj(object sender, RoutedEventArgs e)
         {
@@ -107,7 +107,7 @@ namespace Sekretariat
             //Dodaj sprawdzanie innych pól
             if (uczenDodajZdjecie.Content == null || cbiUczenPlec == null || uczenDataUr.SelectedDate == null)
             {
-                MessageBox.Show("Uzupełnij wszystkie wymagane pola, world!");
+                MessageBox.Show("Uzupełnij wszystkie wymagane pola");
             }
             else
             {
@@ -136,7 +136,7 @@ namespace Sekretariat
             //Dodaj sprawdzanie innych pól
             if (nauczycielDodajZdjecie.Content == null || cbiNauczycielPlec == null || nauczycielDataUr.SelectedDate == null || nauczycielDataZatr.SelectedDate == null)
             {
-                MessageBox.Show("Uzupełnij wszystkie wymagane pola, world!");
+                MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
             }
             else
             {
@@ -163,6 +163,33 @@ namespace Sekretariat
         }
         private void pracownikDodaj(object sender, RoutedEventArgs e)
         {
+            ComboBoxItem cbiPracownikPlec = (ComboBoxItem)pracownikPlec.SelectedItem;
+            //Dodaj sprawdzanie innych pól
+            if (pracownikDodajZdjecie.Content == null || cbiPracownikPlec == null || pracownikDataUr.SelectedDate == null || pracownikDataZatr.SelectedDate == null)
+            {
+                MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
+            }
+            else
+            {
+                pracownicy.Add(new Pracownik()
+                {
+                    Imie = pracownikImie.Text,
+                    DrugieImie = pracownikDrugieImie.Text,
+                    Nazwisko = pracownikNazwisko.Text,
+                    NazwiskoPanienskie = pracownikNazwiskoPanienskie.Text,
+                    ImieOjca = pracownikOjciec.Text,
+                    ImieMatki = pracownikMatka.Text,
+                    DataUrodzenia = pracownikDataUr.SelectedDate.Value,
+                    Pesel = pracownikPesel.Text,
+                    Zdjecie = pracownikDodajZdjecie.Content.ToString(),
+                    Plec = cbiPracownikPlec.Content.ToString(),
+                    Etat = pracownikEtat.Text,
+                    Stanowisko = pracownikStanowisko.Text,
+                    DataZatrudnienia = pracownikDataZatr.SelectedDate.Value
+                });
+                dgPracownik.ItemsSource = null;
+                dgPracownik.ItemsSource = pracownicy;
+            }
         }
 
         public static class BinarySerialization
@@ -269,6 +296,77 @@ namespace Sekretariat
                     dgPracownik.ItemsSource = uczniowie;
                     break;
             }
+        }
+        private void ModyfikujWpis(object sender, RoutedEventArgs e)
+        {
+            switch (rodzajCzlowieka.SelectedIndex)
+            {
+                case 0:
+                    int selectedIndex = dgUczen.SelectedIndex;
+                    ModyfikujUczen modyfikujUczen = new ModyfikujUczen();
+
+                    modyfikujUczen.uczenImie.Text = uczniowie[selectedIndex].Imie;
+                    modyfikujUczen.uczenDrugieImie.Text = uczniowie[selectedIndex].DrugieImie;
+                    modyfikujUczen.uczenNazwisko.Text = uczniowie[selectedIndex].Nazwisko;
+                    modyfikujUczen.uczenNazwiskoPanienskie.Text = uczniowie[selectedIndex].NazwiskoPanienskie;
+                    modyfikujUczen.uczenOjciec.Text = uczniowie[selectedIndex].ImieOjca;
+                    modyfikujUczen.uczenMatka.Text = uczniowie[selectedIndex].ImieMatki;
+                    modyfikujUczen.uczenDataUr.Text = uczniowie[selectedIndex].DataUrodzenia.ToString();
+                    modyfikujUczen.uczenPesel.Text = uczniowie[selectedIndex].Pesel;
+                    modyfikujUczen.uczenDodajZdjecie.Content = uczniowie[selectedIndex].Zdjecie;
+                    modyfikujUczen.uczenPlec.Text = uczniowie[selectedIndex].Plec;
+                    modyfikujUczen.uczenKlasa.Text = uczniowie[selectedIndex].Klasa;
+                    modyfikujUczen.uczenGrupy.Text = uczniowie[selectedIndex].Grupy;
+
+                    modyfikujUczen.ShowDialog();
+
+                    uczniowie[selectedIndex].Imie = modyfikujUczen.uczenImie.Text;
+                    uczniowie[selectedIndex].DrugieImie = modyfikujUczen.uczenDrugieImie.Text;
+                    //modyfikujUczen.sendValues(uczniowie, selectedIndex, dgUczen);
+
+                    dgUczen.ItemsSource = null;
+                    dgUczen.ItemsSource = uczniowie;
+                    break;
+
+                case 1:
+                    selectedIndex = dgNauczyciel.SelectedIndex;
+                    nauczyciele.Remove(nauczyciele[selectedIndex]);
+                    dgNauczyciel.ItemsSource = null;
+                    dgNauczyciel.ItemsSource = uczniowie;
+                    break;
+                case 2:
+                    selectedIndex = dgPracownik.SelectedIndex;
+                    pracownicy.Remove(pracownicy[selectedIndex]);
+                    dgPracownik.ItemsSource = null;
+                    dgPracownik.ItemsSource = uczniowie;
+                    break;
+            }
+        }
+        private void szukaj(object sender, RoutedEventArgs e)
+        {
+            dgUczen.IsTextSearchEnabled = true;
+            SearchValue(Interaction.InputBox("Wpisz swoje wyszukianie", "Wyszukiwanie", "Szukanie"));
+
+        }
+        public void SearchValue(string matchValue)
+        {
+            string filterText = matchValue;
+            ICollectionView cv = CollectionViewSource.GetDefaultView(dgUczen.ItemsSource);
+
+            if (!string.IsNullOrEmpty(filterText))
+            {
+                cv.Filter = o => {
+                    /* change to get data row value */
+                    Uczen p = o as Uczen;
+                    return (p.Imie.ToUpper().StartsWith(filterText.ToUpper()));
+                    /* end change to get data row value */
+                };
+            }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
