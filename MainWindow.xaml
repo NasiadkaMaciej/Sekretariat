@@ -11,14 +11,14 @@
             <MenuItem Header="_Plik">
                 <MenuItem Header="Zapi_sz" Click="Zapisz"/>
                 <MenuItem Header="_Otwórz" Click="Otworz"/>
-                <MenuItem Header="_Wyjdź" />
+                <MenuItem Header="_Wyjdź" Click="Wyjdz"/>
             </MenuItem>
             <MenuItem Header="_Wpis">
                 <MenuItem Header="_Usuń" Click="UsunWpis"/>
                 <MenuItem Header="_Modyfikuj" Click="ModyfikujWpis"/>
             </MenuItem>
             <MenuItem Header="_Ustawienia">
-                <MenuItem Header="_Manage users"/>
+                <MenuItem Header="_Zarządzaj skrótami"/>
             </MenuItem>
         </Menu>
         <Grid>
@@ -29,7 +29,6 @@
                     Nowe Labele zaczynają się na końcu TextBoxa
                     Szerokość kolumny to 130+szerokość Labelax, textBoxy są oddalone od początku Labela o jego szerokość
                     -->
-
                         <Label Content="Imię:" Margin="0,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <TextBox Name="uczenImie" HorizontalAlignment="Left" Margin="80,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
                         <Label Content="Drugie imię:" Margin="0,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
@@ -49,7 +48,7 @@
                         <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <TextBox Name="uczenPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
                         <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                        <Button Content="__________" Name="uczenDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="uczenZaladujZdjecie"/>
+                        <Button Content="__________" Name="uczenDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="zaladujZdjecie"/>
 
                         <Label Content="Płeć:" Margin="640,10,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <ComboBox Name="uczenPlec" HorizontalAlignment="Left" Margin="690,14,0,0" VerticalAlignment="Top" Width="110">
@@ -61,7 +60,7 @@
                         <Label Content="Grupy:" Margin="640,70,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <TextBox Name="uczenGrupy" Margin="690,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
                         <Button Content="Szukaj" Click="szukaj" HorizontalAlignment="Left" Margin="830,70,0,0" VerticalAlignment="Top" Width="120"/>
-                        <Button Content="Dodaj" Click="uczenDodaj" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
+                        <Button Content="Dodaj" Click="dodajCzlowieka" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
 
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
 
@@ -104,7 +103,7 @@
                         <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <TextBox Name="nauczycielPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
                         <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                        <Button Content="__________" Name="nauczycielDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="nauczycielZaladujZdjecie"/>
+                        <Button Content="__________" Name="nauczycielDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="zaladujZdjecie"/>
 
                         <Label Content="Płeć:" Margin="640,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <ComboBox Name="nauczycielPlec" HorizontalAlignment="Left" Margin="740,14,0,0" VerticalAlignment="Top" Width="110">
@@ -120,7 +119,7 @@
                         <TextBox Name="nauczycielKlasy" Margin="960,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
                         <Label Content="Data zatrudnienia:" Margin="850,40,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <DatePicker Name="nauczycielDataZatr" HorizontalAlignment="Left" Margin="960,40,0,0" VerticalAlignment="Top" Width="120"/>
-                        <Button Content="Dodaj" Click="nauczycielDodaj" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
+                        <Button Content="Dodaj" Click="dodajCzlowieka" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
 
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
 
@@ -165,7 +164,7 @@
                         <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <TextBox Name="pracownikPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
                         <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                        <Button Content="__________" Name="pracownikDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="pracownikZaladujZdjecie"/>
+                        <Button Content="__________" Name="pracownikDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="zaladujZdjecie"/>
 
                         <Label Content="Płeć:" Margin="640,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <ComboBox Name="pracownikPlec" HorizontalAlignment="Left" Margin="740,14,0,0" VerticalAlignment="Top" Width="110">
@@ -179,7 +178,7 @@
 
                         <Label Content="Data zatrudnienia:" Margin="850,10,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                         <DatePicker Name="pracownikDataZatr" HorizontalAlignment="Left" Margin="960,10,0,0" VerticalAlignment="Top" Width="120"/>
-                        <Button Content="Dodaj" Click="pracownikDodaj" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
+                        <Button Content="Dodaj" Click="dodajCzlowieka" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
 
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
 

@@ -1,0 +1,71 @@
+﻿<Window x:Class="Sekretariat.ModyfikujNauczyciel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sekretariat"
+        mc:Ignorable="d"
+        Title="ModyfikujNauczyciel" Height="450" Width="1100">
+    <Grid>
+        <Grid Background="#FFE5E5E5">
+            <Label Content="Imię:" Margin="0,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielImie" HorizontalAlignment="Left" Margin="80,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Drugie imię:" Margin="0,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielDrugieImie" HorizontalAlignment="Left" Margin="80,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Nazwisko:" Margin="0,70,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielNazwisko" HorizontalAlignment="Left" Margin="80,74,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+
+            <Label Content="Nazwisko panieńskie:" Margin="190,10,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielNazwiskoPanienskie" Margin="320,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+            <Label Content="Imię ojca:" Margin="190,40,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielOjciec" Margin="320,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+            <Label Content="Imię matki:" Margin="190,70,0,0" Width="130px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielMatka" Margin="320,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+
+            <Label Content="Data urodzenia:" Margin="430,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <DatePicker Name="nauczycielDataUr" HorizontalAlignment="Left" Margin="530,10,0,0" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <Button Content="__________" Name="nauczycielDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="zaladujZdjecie"/>
+
+            <Label Content="Płeć:" Margin="640,10,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <ComboBox Name="nauczycielPlec" HorizontalAlignment="Left" Margin="740,14,0,0" VerticalAlignment="Top" Width="110">
+                <ComboBoxItem>Mężczyzna</ComboBoxItem>
+                <ComboBoxItem>Kobieta</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Wychowawstwo:" Margin="640,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielWychowawstwo" Margin="740,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+            <Label Content="Przedmioty:" Margin="640,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielPrzedmioty" Margin="740,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+
+            <Label Content="Klasy i godziny:" Margin="850,10,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <TextBox Name="nauczycielKlasy" Margin="960,14,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+            <Label Content="Data zatrudnienia:" Margin="850,40,0,0" Width="110px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+            <DatePicker Name="nauczycielDataZatr" HorizontalAlignment="Left" Margin="960,40,0,0" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Anuluj" Click="AnulujModyfikuj" HorizontalAlignment="Left" Margin="860,70,0,0" VerticalAlignment="Top" Width="90"/>
+            <Button Content="Modyfikuj" Click="doModyfikuj" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
+
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
+
+            <DataGrid Name="dgNauczyciel" Margin="0,100,0,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Imię" Binding="{Binding Imie}" />
+                    <DataGridTextColumn Header="Drugie Imię" Binding="{Binding DrugieImie}" />
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}" />
+                    <DataGridTextColumn Header="Nazwisko panieńskie" Binding="{Binding NazwiskoPanienskie}" />
+                    <DataGridTextColumn Header="Imię ojca" Binding="{Binding ImieOjca}" />
+                    <DataGridTextColumn Header="Imię matki" Binding="{Binding ImieMatki}" />
+                    <DataGridTextColumn Header="Data urodzenia" Binding="{Binding DataUrodzenia}" />
+                    <DataGridTextColumn Header="Pesel" Binding="{Binding Pesel}" />
+                    <DataGridTextColumn Header="Zdjęcie" Binding="{Binding Zdjecie}" />
+                    <DataGridTextColumn Header="Płeć" Binding="{Binding Plec}" />
+                    <DataGridTextColumn Header="Wychowawstwo" Binding="{Binding Wychowawstwo}" />
+                    <DataGridTextColumn Header="Przedmioty" Binding="{Binding Przedmioty}" />
+                    <DataGridTextColumn Header="Klasy" Binding="{Binding Klasy}" />
+                    <DataGridTextColumn Header="Data zatrudnienia" Binding="{Binding DataZatrudnienia}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

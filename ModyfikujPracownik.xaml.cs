@@ -4,20 +4,19 @@ using System.Windows;
 namespace Sekretariat
 {
     /// <summary>
-    /// Interaction logic for ModyfikujUczen.xaml
+    /// Interaction logic for ModyfikujPracownik.xaml
     /// </summary>
-    public partial class ModyfikujUczen : Window
+    public partial class ModyfikujPracownik : Window
     {
-
-        public ModyfikujUczen()
+        public ModyfikujPracownik()
         {
             InitializeComponent();
-            dgUczen.IsReadOnly = true;
+            dgPracownik.IsReadOnly = true;
         }
         private void zaladujZdjecie(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true) uczenDodajZdjecie.Content = openFileDialog.FileName.ToString();
+            if (openFileDialog.ShowDialog() == true) pracownikDodajZdjecie.Content = openFileDialog.FileName.ToString();
         }
 
         private void doModyfikuj(object sender, RoutedEventArgs e)

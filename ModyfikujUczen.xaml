@@ -8,11 +8,6 @@
         Title="ModyfikujUczen" Height="450" Width="1100">
     <Grid>
         <Grid Background="#FFE5E5E5">
-            <!--
-                    Nowe Labele zaczynają się na końcu TextBoxa
-                    Szerokość kolumny to 130+szerokość Labelax, textBoxy są oddalone od początku Labela o jego szerokość
-                    -->
-
             <Label Content="Imię:" Margin="0,10,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
             <TextBox Name="uczenImie" HorizontalAlignment="Left" Margin="80,14,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
             <Label Content="Drugie imię:" Margin="0,40,0,0" Width="80px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
@@ -32,7 +27,7 @@
             <Label Content="Pesel:" Margin="430,40,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
             <TextBox Name="uczenPesel" HorizontalAlignment="Left" Margin="530,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="110"/>
             <Label Content="Zdjęcie:" Margin="430,70,0,0" Width="100px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-            <Button Content="__________" Name="uczenDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="uczenZaladujZdjecie"/>
+            <Button Content="__________" Name="uczenDodajZdjecie" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Height="20" Width="110" Click="zaladujZdjecie"/>
 
             <Label Content="Płeć:" Margin="640,10,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
             <ComboBox Name="uczenPlec" HorizontalAlignment="Left" Margin="690,14,0,0" VerticalAlignment="Top" Width="110">
@@ -43,11 +38,27 @@
             <TextBox Name="uczenKlasa" Margin="690,44,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
             <Label Content="Grupy:" Margin="640,70,0,0" Width="50px" Height="30px" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
             <TextBox Name="uczenGrupy" Margin="690,74,0,0" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
-            <Button Content="Anuluj" Click="AnulujModyfikujUczen" HorizontalAlignment="Left" Margin="830,70,0,0" VerticalAlignment="Top" Width="120"/>
-            <Button Content="Modyfikuj" Click="doModyfikujUczen" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Anuluj" Click="AnulujModyfikuj" HorizontalAlignment="Left" Margin="830,70,0,0" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Modyfikuj" Click="doModyfikuj" HorizontalAlignment="Left" Margin="960,70,0,0" VerticalAlignment="Top" Width="120"/>
 
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,100,0,0" VerticalAlignment="Top" Width="1100"/>
 
+            <DataGrid Name="dgUczen" Margin="0,100,0,0" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Imię" Binding="{Binding Imie}" />
+                    <DataGridTextColumn Header="Drugie Imię" Binding="{Binding DrugieImie}" />
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}" />
+                    <DataGridTextColumn Header="Nazwisko panieńskie" Binding="{Binding NazwiskoPanienskie}" />
+                    <DataGridTextColumn Header="Imię ojca" Binding="{Binding ImieOjca}" />
+                    <DataGridTextColumn Header="Imię matki" Binding="{Binding ImieMatki}" />
+                    <DataGridTextColumn Header="Data urodzenia" Binding="{Binding DataUrodzenia}" />
+                    <DataGridTextColumn Header="Pesel" Binding="{Binding Pesel}" />
+                    <DataGridTextColumn Header="Zdjęcie" Binding="{Binding Zdjecie}" />
+                    <DataGridTextColumn Header="Płeć" Binding="{Binding Plec}" />
+                    <DataGridTextColumn Header="Klasa" Binding="{Binding Klasa}" />
+                    <DataGridTextColumn Header="Grupy" Binding="{Binding Grupy}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </Window>

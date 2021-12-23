@@ -15,4 +15,6 @@ Zapisywanie i odczytywanie plików z i do dowolnego pliku działające dla każd
 05.12.2021 14:24
 Działające usuwanie wpisów
 22.12.2021 23:17
-Po długich próbwach udało się wprowadzić "szkielet" modyfikacji danych z osobnego okienka
+Po długich próbach udało się wprowadzić "szkielet" modyfikacji danych z osobnego okienka
+23.12.2021 22:52
+W pełni działająca modyfikacja danych oraz zabezpieczenie przed próbą usunięcia lub zmodyfikowania wpisu bez jego wybrania
