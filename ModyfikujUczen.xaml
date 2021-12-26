@@ -53,7 +53,14 @@
                     <DataGridTextColumn Header="Imię matki" Binding="{Binding ImieMatki}" />
                     <DataGridTextColumn Header="Data urodzenia" Binding="{Binding DataUrodzenia}" />
                     <DataGridTextColumn Header="Pesel" Binding="{Binding Pesel}" />
-                    <DataGridTextColumn Header="Zdjęcie" Binding="{Binding Zdjecie}" />
+                    <!--<DataGridTextColumn Header="Zdjęcie" Binding="{Binding Zdjecie}" /> -->
+                    <DataGridTemplateColumn Header="Zdjęcie" Width="250">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Zdjecie}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="Płeć" Binding="{Binding Plec}" />
                     <DataGridTextColumn Header="Klasa" Binding="{Binding Klasa}" />
                     <DataGridTextColumn Header="Grupy" Binding="{Binding Grupy}" />

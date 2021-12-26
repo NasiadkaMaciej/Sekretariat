@@ -66,6 +66,13 @@
 
                         <DataGrid Name="dgUczen" Margin="0,100,0,0" AutoGenerateColumns="False">
                             <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Imię">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Imie}"></TextBlock>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Imię" Binding="{Binding Imie}" />
                                 <DataGridTextColumn Header="Drugie Imię" Binding="{Binding DrugieImie}" />
                                 <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}" />
@@ -74,7 +81,14 @@
                                 <DataGridTextColumn Header="Imię matki" Binding="{Binding ImieMatki}" />
                                 <DataGridTextColumn Header="Data urodzenia" Binding="{Binding DataUrodzenia}" />
                                 <DataGridTextColumn Header="Pesel" Binding="{Binding Pesel}" />
-                                <DataGridTextColumn Header="Zdjęcie" Binding="{Binding Zdjecie}" />
+                                <!--<DataGridTextColumn Header="Zdjęcie" Binding="{Binding Zdjecie}" /> -->
+                                <DataGridTemplateColumn Header="Zdjęcie" Width="250">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Zdjecie}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Płeć" Binding="{Binding Plec}" />
                                 <DataGridTextColumn Header="Klasa" Binding="{Binding Klasa}" />
                                 <DataGridTextColumn Header="Grupy" Binding="{Binding Grupy}" />

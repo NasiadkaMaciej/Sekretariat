@@ -18,3 +18,5 @@ Działające usuwanie wpisów
 Po długich próbach udało się wprowadzić "szkielet" modyfikacji danych z osobnego okienka
 23.12.2021 22:52
 W pełni działająca modyfikacja danych oraz zabezpieczenie przed próbą usunięcia lub zmodyfikowania wpisu bez jego wybrania
+26.12.2021 15:06
+Zmieniono wyświetlanie ścieżki zdjęcia na wyświetlanie zdjęcia

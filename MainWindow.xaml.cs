@@ -21,14 +21,13 @@ namespace Sekretariat
         public MainWindow()
         {
             InitializeComponent();
-
             //Dodawanie przykładowych ludzi do tabel
-            /* uczniowie.Add(new Uczen() { Imie = "Zawisza", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Klasa = "3Pr", Grupy = "Ang gr2" });
-            uczniowie.Add(new Uczen() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Klasa = "3Pr", Grupy = "Ang gr2" });
-            nauczyciele.Add(new Nauczyciel() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Wychowawstwo = "3Pr", Przedmioty = "Angielski", Klasy = "3Pr", DataZatrudnienia = DateTime.Today });
-            nauczyciele.Add(new Nauczyciel() { Imie = "Krystian", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Wychowawstwo = "3Pr", Przedmioty = "Angielski", Klasy = "3Pr", DataZatrudnienia = DateTime.Today });
-            pracownicy.Add(new Pracownik() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Etat = "Pełny", Stanowisko = "Kucharz", DataZatrudnienia = DateTime.Today });
-            pracownicy.Add(new Pracownik() { Imie = "Mariusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\\Users\\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Etat = "Pełny", Stanowisko = "Kucharz", DataZatrudnienia = DateTime.Today }); */
+            /* uczniowie.Add(new Uczen() { Imie = "Zawisza", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\Users\Zawisza\Desktop\\fotografia.png", Plec = "Mężczyzna", Klasa = "3Pr", Grupy = "Ang gr2" });
+            uczniowie.Add(new Uczen() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\Users\\Zawisza\Desktop\fotografia.png", Plec = "Mężczyzna", Klasa = "3Pr", Grupy = "Ang gr2" });
+            nauczyciele.Add(new Nauczyciel() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\Users\Zawisza\Desktop\\fotografia.png", Plec = "Mężczyzna", Wychowawstwo = "3Pr", Przedmioty = "Angielski", Klasy = "3Pr", DataZatrudnienia = DateTime.Today });
+            nauczyciele.Add(new Nauczyciel() { Imie = "Krystian", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\Users\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Wychowawstwo = "3Pr", Przedmioty = "Angielski", Klasy = "3Pr", DataZatrudnienia = DateTime.Today });
+            pracownicy.Add(new Pracownik() { Imie = "Janusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\Users\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Etat = "Pełny", Stanowisko = "Kucharz", DataZatrudnienia = DateTime.Today });
+            pracownicy.Add(new Pracownik() { Imie = "Mariusz", DrugieImie = "Konstanty", Nazwisko = "Jabłoński", NazwiskoPanienskie = "Jabłoński", ImieOjca = "Janusz", ImieMatki = "Irena", DataUrodzenia = DateTime.Today, Pesel = "12345678901", Zdjecie = "C:\Users\Zawisza\\Desktop\\fotografia.png", Plec = "Mężczyzna", Etat = "Pełny", Stanowisko = "Kucharz", DataZatrudnienia = DateTime.Today }); */
 
             //Zapisywanie przykładowych ludzi do plików
             /* BinarySerialization.WriteToBinaryFile<List<Uczen>>("uczniowie.txt", uczniowie);
@@ -467,9 +466,8 @@ namespace Sekretariat
         }
         private void szukaj(object sender, RoutedEventArgs e)
         {
-            dgUczen.IsTextSearchEnabled = true;
+            //dgUczen.IsTextSearchEnabled = true;
             SearchValue(Interaction.InputBox("Wpisz swoje wyszukianie", "Wyszukiwanie", "Szukanie"));
-
         }
         public void SearchValue(string matchValue)
         {
@@ -497,7 +495,6 @@ namespace Sekretariat
                         MessageBox.Show("Wybierz ucznia");
                         return false;
                     }
-                    break;
                 case 1:
                     if (dgNauczyciel.SelectedIndex != -1) return true;
                     else
@@ -505,17 +502,15 @@ namespace Sekretariat
                         MessageBox.Show("Wybierz nauczyciela");
                         return false;
                     }
-                    break;
                 case 2:
                     if (dgPracownik.SelectedIndex != -1) return true;
                     {
                         MessageBox.Show("Wybierz pracownika");
                         return false;
                     }
-                    break;
-                default:
-                    return false;
             }
+            return false;
+
         }
 
         public static class BinarySerialization
