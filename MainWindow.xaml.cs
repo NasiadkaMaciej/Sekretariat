@@ -66,6 +66,23 @@ namespace Sekretariat
         [Serializable]
         public class Uczen : Czlowiek
         {
+            public override string ToString()
+            {
+                String data =
+                    Imie + "\t" +
+                    DrugieImie + "\t" +
+                    Nazwisko + "\t" +
+                    NazwiskoPanienskie + "\t" +
+                    ImieOjca + "\t" +
+                    ImieMatki + "\t" +
+                    DataUrodzenia + "\t" +
+                    Pesel + "\t" +
+                    Zdjecie + "\t" +
+                    Plec + "\t" +
+                    Klasa + "\t" +
+                    Grupy;
+                return data;
+            }
             public string Klasa { get; set; }
             public string Grupy { get; set; }
         }
@@ -467,22 +484,34 @@ namespace Sekretariat
         private void szukaj(object sender, RoutedEventArgs e)
         {
             //dgUczen.IsTextSearchEnabled = true;
-            SearchValue(Interaction.InputBox("Wpisz swoje wyszukianie", "Wyszukiwanie", "Szukanie"));
-        }
-        public void SearchValue(string matchValue)
-        {
-            string filterText = matchValue;
-            ICollectionView cv = CollectionViewSource.GetDefaultView(dgUczen.ItemsSource);
+            String fraza = Interaction.InputBox("Wpisz swoje wyszukianie. Zostaw puste pole jeśli chcesz wyświetlić wszystkie dane", "Wyszukiwanie", "Szukanie");
 
-            if (!string.IsNullOrEmpty(filterText))
+            switch (rodzajCzlowieka.SelectedIndex)
             {
-                cv.Filter = o =>
-                {
-                    /* change to get data row value */
-                    Uczen p = o as Uczen;
-                    return (p.Imie.ToUpper().StartsWith(filterText.ToUpper()));
-                    /* end change to get data row value */
-                };
+                case 0:
+                    List<Uczen> searchedUczniowie = new List<Uczen>();
+                    for (int i = 0; i < uczniowie.Count; i++)
+                    {
+                        if (uczniowie[i].ToString().Contains(fraza)) searchedUczniowie.Add(uczniowie[i]);
+                    }
+                    dgUczen.ItemsSource = searchedUczniowie;
+                    break;
+                case 1:
+                    List<Nauczyciel> searchedNauczyciele = new List<Nauczyciel>();
+                    for (int i = 0; i < nauczyciele.Count; i++)
+                    {
+                        if (nauczyciele[i].ToString().Contains(fraza)) searchedNauczyciele.Add(nauczyciele[i]);
+                    }
+                    dgUczen.ItemsSource = searchedNauczyciele;
+                    break;
+                case 2:
+                    List<Pracownik> searchedPracownicy = new List<Pracownik>();
+                    for (int i = 0; i < uczniowie.Count; i++)
+                    {
+                        if (pracownicy[i].ToString().Contains(fraza)) searchedPracownicy.Add(pracownicy[i]);
+                    }
+                    dgUczen.ItemsSource = searchedPracownicy;
+                    break;
             }
         }
         public bool CzyWybranoPole(int rodzajCzlowieka)

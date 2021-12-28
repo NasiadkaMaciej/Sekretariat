@@ -20,3 +20,5 @@ Po długich próbach udało się wprowadzić "szkielet" modyfikacji danych z oso
 W pełni działająca modyfikacja danych oraz zabezpieczenie przed próbą usunięcia lub zmodyfikowania wpisu bez jego wybrania
 26.12.2021 15:06
 Zmieniono wyświetlanie ścieżki zdjęcia na wyświetlanie zdjęcia
+28.12.2021 13:03
+Wprowadzono w pełni działające wyszukiwanie frazy w każdym z pól
