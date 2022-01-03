@@ -24,7 +24,6 @@ namespace Sekretariat
         {
             MainWindow.modified = true;
             this.Close();
-
         }
         private void AnulujModyfikuj(object sender, RoutedEventArgs e)
         {

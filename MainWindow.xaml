@@ -8,17 +8,17 @@
         Title="MainWindow" Height="600" Width="1100">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_Plik">
-                <MenuItem Header="Zapi_sz" Click="Zapisz"/>
-                <MenuItem Header="_Otwórz" Click="Otworz"/>
-                <MenuItem Header="_Wyjdź" Click="Wyjdz"/>
+            <MenuItem Name="PlikMenuItem" Header="_Plik">
+                <MenuItem Name="ZapiszMenuItem" Header="Zapi_sz" Click="Zapisz"/>
+                <MenuItem Name="OtworzMenuItem"  Header="_Otwórz" Click="Otworz"/>
+                <MenuItem Name="WyjdzMenuItem" Header="_Wyjdź" Click="Wyjdz"/>
             </MenuItem>
-            <MenuItem Header="_Wpis">
-                <MenuItem Header="_Usuń" Click="UsunWpis"/>
-                <MenuItem Header="_Modyfikuj" Click="ModyfikujWpis"/>
+            <MenuItem Name="WpisMenuItem" Header="_Wpis">
+                <MenuItem Name="UsunMenuItem" Header="_Usuń" Click="UsunWpis"/>
+                <MenuItem Name="ModyfikujMenuItem" Header="_Modyfikuj" Click="ModyfikujWpis"/>
             </MenuItem>
-            <MenuItem Header="_Ustawienia">
-                <MenuItem Header="_Zarządzaj skrótami"/>
+            <MenuItem Name="UstawieniaMenuItem" Header="_Ustawienia">
+                <MenuItem Name="ZarzadzajMenuItem" Header="_Zarządzaj skrótami" Click="ModyfikujSkroty"/>
             </MenuItem>
         </Menu>
         <Grid>

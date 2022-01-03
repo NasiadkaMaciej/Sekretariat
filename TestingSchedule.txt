@@ -22,3 +22,8 @@ W pełni działająca modyfikacja danych oraz zabezpieczenie przed próbą usuni
 Zmieniono wyświetlanie ścieżki zdjęcia na wyświetlanie zdjęcia
 28.12.2021 13:03
 Wprowadzono w pełni działające wyszukiwanie frazy w każdym z pól
+03.01.2021 20:01
+Dodano podstawowe edytowanie skrótów klawiszowych
+To-Do:
+Weryfikacja poprawności wybranych skrótów
+Edycja każdego skrótu

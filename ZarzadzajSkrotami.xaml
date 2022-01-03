@@ -1,0 +1,25 @@
+﻿<Window x:Class="Sekretariat.ZarzadzajSkrotami"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sekretariat"
+        mc:Ignorable="d"
+        Title="ZarzadzajSkrotami" Height="450" Width="800">
+    <Grid>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Name="PlikMenuItem" Header="_Plik">
+                <MenuItem Name="ZapiszMenuItem" Header="Zapi_sz" Click="Zapisz"/>
+                <MenuItem Name="OtworzMenuItem"  Header="_Otwórz" Click="Otworz"/>
+                <MenuItem Name="WyjdzMenuItem" Header="_Wyjdź" Click="Wyjdz"/>
+            </MenuItem>
+            <MenuItem Name="WpisMenuItem" Header="_Wpis">
+                <MenuItem Name="UsunMenuItem" Header="_Usuń" Click="UsunWpis"/>
+                <MenuItem Name="ModyfikujMenuItem" Header="_Modyfikuj" Click="ModyfikujWpis"/>
+            </MenuItem>
+            <MenuItem Name="UstawieniaMenuItem" Header="_Ustawienia">
+                <MenuItem Name="ZarzadzajMenuItem" Header="_Zarządzaj skrótami" Click="ModyfikujSkroty"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

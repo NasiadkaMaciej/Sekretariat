@@ -541,6 +541,30 @@ namespace Sekretariat
             return false;
 
         }
+        public struct Menu{
+            public string plik, zapisz, otworz, wyjdz, wpis, usun, modyfikuj, ustawienia, zarzadzaj;
+        }
+        private void ModyfikujSkroty(object sender, RoutedEventArgs e)
+        {
+            Menu originalMenu;
+
+            originalMenu.plik = PlikMenuItem.Header.ToString();
+            originalMenu.zapisz = PlikMenuItem.Header.ToString();
+            originalMenu.otworz = PlikMenuItem.Header.ToString();
+            originalMenu.wyjdz = PlikMenuItem.Header.ToString();
+            originalMenu.wpis = PlikMenuItem.Header.ToString();
+            originalMenu.usun = PlikMenuItem.Header.ToString();
+            originalMenu.modyfikuj = PlikMenuItem.Header.ToString();
+            originalMenu.ustawienia = PlikMenuItem.Header.ToString();
+            originalMenu.zarzadzaj = PlikMenuItem.Header.ToString();
+
+            ZarzadzajSkrotami zarzadzajSkrotami = new ZarzadzajSkrotami();
+            zarzadzajSkrotami.ShowDialog();
+            //originalMenu.zapisz = zarzadzajSkrotami.changedMenu.zapisz;
+            ZapiszMenuItem.Header = zarzadzajSkrotami.changedMenu.zapisz;
+
+            //ZapiszMenuItem.Header = "xd_d";
+        }
 
         public static class BinarySerialization
         {
