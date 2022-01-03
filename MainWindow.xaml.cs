@@ -549,21 +549,27 @@ namespace Sekretariat
             Menu originalMenu;
 
             originalMenu.plik = PlikMenuItem.Header.ToString();
-            originalMenu.zapisz = PlikMenuItem.Header.ToString();
-            originalMenu.otworz = PlikMenuItem.Header.ToString();
-            originalMenu.wyjdz = PlikMenuItem.Header.ToString();
-            originalMenu.wpis = PlikMenuItem.Header.ToString();
-            originalMenu.usun = PlikMenuItem.Header.ToString();
-            originalMenu.modyfikuj = PlikMenuItem.Header.ToString();
-            originalMenu.ustawienia = PlikMenuItem.Header.ToString();
-            originalMenu.zarzadzaj = PlikMenuItem.Header.ToString();
+            originalMenu.zapisz = ZapiszMenuItem.Header.ToString();
+            originalMenu.otworz = OtworzMenuItem.Header.ToString();
+            originalMenu.wyjdz = WyjdzMenuItem.Header.ToString();
+            originalMenu.wpis = WpisMenuItem.Header.ToString();
+            originalMenu.usun = UsunMenuItem.Header.ToString();
+            originalMenu.modyfikuj = ModyfikujMenuItem.Header.ToString();
+            originalMenu.ustawienia = UstawieniaMenuItem.Header.ToString();
+            originalMenu.zarzadzaj = ZarzadzajMenuItem.Header.ToString();
 
             ZarzadzajSkrotami zarzadzajSkrotami = new ZarzadzajSkrotami();
             zarzadzajSkrotami.ShowDialog();
-            //originalMenu.zapisz = zarzadzajSkrotami.changedMenu.zapisz;
-            ZapiszMenuItem.Header = zarzadzajSkrotami.changedMenu.zapisz;
 
-            //ZapiszMenuItem.Header = "xd_d";
+            PlikMenuItem.Header = zarzadzajSkrotami.changedMenu.plik;
+            ZapiszMenuItem.Header = zarzadzajSkrotami.changedMenu.zapisz;
+            OtworzMenuItem.Header = zarzadzajSkrotami.changedMenu.otworz;
+            WyjdzMenuItem.Header = zarzadzajSkrotami.changedMenu.wyjdz;
+            WpisMenuItem.Header = zarzadzajSkrotami.changedMenu.wpis;
+            UsunMenuItem.Header = zarzadzajSkrotami.changedMenu.usun;
+            ModyfikujMenuItem.Header = zarzadzajSkrotami.changedMenu.modyfikuj;
+            UstawieniaMenuItem.Header = zarzadzajSkrotami.changedMenu.ustawienia;
+            ZarzadzajMenuItem.Header = zarzadzajSkrotami.changedMenu.zarzadzaj;
         }
 
         public static class BinarySerialization

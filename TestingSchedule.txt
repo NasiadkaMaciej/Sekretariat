@@ -27,3 +27,8 @@ Dodano podstawowe edytowanie skrótów klawiszowych
 To-Do:
 Weryfikacja poprawności wybranych skrótów
 Edycja każdego skrótu
+04.01.2021 13:38
+Wprowadzono edycję każdego skrótu klawiszowego
+To-Do:
+Zapisywanie skrótów klawiszowych
+Weryfikacja poprawności skrótów
